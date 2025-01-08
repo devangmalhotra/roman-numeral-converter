@@ -16,21 +16,31 @@ body {
 
 main {
   margin: 20px;
-  background: pink;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
 }
 
 fieldset {
-  background: green;
-  text-align: center;
-  padding: 20px;
+  background: #b30000;
   display: flex;
+  text-align: center;
+  justify-content: center;
   flex-direction: column;
   gap: 20px;
+  border: solid white 2px;
+  padding: 20px;
+  width: 100%;
   max-width: 400px;
 }
 
@@ -40,12 +50,19 @@ fieldset label {
 }
 
 fieldset input {
-  background: teal;
+  background: #610000;
   border: solid white 2px;
   height: 50px;
   padding: 20px;
   font-size: 20px;
   color: white;
+  transition-duration: 0.2s;
+}
+
+fieldset input:focus {
+  outline: none;
+  border: solid #0398dc 2px;
+  transition-duration: 0.2s;
 }
 
 fieldset button {
@@ -67,7 +84,21 @@ fieldset button:hover {
   transition-duration: 0.2s;
 }
 
+#output {
+  background-color: #b30000;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: solid white 2px;
+  text-align: center;
+  font-size: 25px;
+}
+
 #title-text {
   text-align: center;
   max-width: 400px;
+}
+
+.hidden {
+  display: none;
 }
