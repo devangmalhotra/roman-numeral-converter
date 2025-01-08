@@ -14,27 +14,60 @@ body {
     height: 100vh;
 }
 
-#container {
+main {
   margin: 20px;
+  background: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+fieldset {
+  background: green;
+  text-align: center;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100%;
+  max-width: 400px;
+}
+
+fieldset label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+fieldset input {
+  background: teal;
+  border: solid white 2px;
+  height: 50px;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+fieldset button {
+  background: white;
+  border: solid grey 2px;
+  height: 10px;
+  padding: 20px;
+  font-size: 15px;
+  color: black;
+  display: flex;
   align-items: center;
   justify-content: center;
+  transition-duration: 0.2s;
+}
+
+fieldset button:hover {
+  cursor: pointer;
+  background: grey;
+  transition-duration: 0.2s;
 }
 
 #title-text {
   text-align: center;
-}
-
-#content-container {
-  background: #c30000;
-  border: solid 3px white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px;
+  max-width: 400px;
 }
