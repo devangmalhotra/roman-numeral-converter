@@ -7,4 +7,13 @@ const arabicToRoman = () => {
   console.log(inputVal);
 }
 
+const isValid = () => {
+  let inputVal = inputField.value;
+  if (inputVal < 0) { //negative val
+    alert("Please enter a number greater than or equal to 1");
+  } else if (inputVal >= 4000) {
+    alert("Please enter a number less than or equal to 3999")
+  }
+}
+
 convertButton.addEventListener("click", arabicToRoman);
