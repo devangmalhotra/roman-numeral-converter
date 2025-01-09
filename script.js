@@ -22,38 +22,24 @@ const isValid = () => {
 const arabicToRoman = () => {
   let inputVal = inputField.value;
   let currIndex = 0;
-  //console.log(inputVal);
-  
-  // Loop through arabicRomanSymbols arr 
-  // If inputVal > 1000, resultArabicNum += arabicRomanSymbols[-1].arabic, resultRomanString += arabicRomanSymbols[-1].roman, inputVal -= arabicRomanSymbols[-1].arabic
-  // Else, 
-  for (let i = 0; i < 7; i++) { // change to while loop after testing
+ 
+  while (inputVal > 0) { 
     if (inputVal >= 1000) {
       resultArabicNum += arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
       resultRomanString += arabicRomanSymbols[arabicRomanSymbols.length - 1].roman;
       inputVal -= arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
-      //console.log(resultArabicNum);
-      //console.log(resultRomanString);
-      //console.log(inputVal);
     } else {
       if (arabicRomanSymbols[currIndex + 1].arabic <= inputVal) {
         currIndex += 1;
-        console.log("test");
       } else if (arabicRomanSymbols[currIndex].arabic == inputVal || arabicRomanSymbols[currIndex + 1].arabic > inputVal) {
-        //console.log(currIndex);
-        //console.log(inputVal);
-        //console.log(arabicRomanSymbols[currIndex].arabic);
-        //console.log(arabicRomanSymbols[currIndex].roman);
         resultArabicNum += arabicRomanSymbols[currIndex].arabic;
         resultRomanString += arabicRomanSymbols[currIndex].roman;
         inputVal -= arabicRomanSymbols[currIndex].arabic;
         console.log(resultArabicNum);
         console.log(resultRomanString);
-        //console.log(inputVal);
         currIndex = 0;
       }
     }
-    //break;
   }
   
 }
