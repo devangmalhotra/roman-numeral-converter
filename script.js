@@ -1,4 +1,4 @@
-const inputField = document.getElementById("input");
+const inputField = document.getElementById("number");
 const convertButton = document.getElementById("convert-btn");
 let output = document.getElementById("output");
 let resultRomanString = "";
@@ -10,10 +10,30 @@ const arabicRomanSymbols = [{arabic: 1, roman: "I"}, {arabic: 4, roman: "IV"}, {
 
 const isValid = () => {
   let inputVal = inputField.value;
+    if (!output.classList.contains("hidden")) {
+      reset();
+    }
   if (inputVal < 0) { // negative val
-    alert("Please enter a number greater than or equal to 1");
+    const resultParagraphEl = document.createElement("p");
+    resultParagraphEl.id = "result";
+    const node = document.createTextNode("Please enter a number greater than or equal to 1");
+    resultParagraphEl.appendChild(node);
+    output.appendChild(resultParagraphEl);
+    output.classList.remove("hidden");
   } else if (inputVal >= 4000) {
-    alert("Please enter a number less than or equal to 3999");
+    const resultParagraphEl = document.createElement("p");
+    resultParagraphEl.id = "result";
+    const node = document.createTextNode("Please enter a number less than or equal to 3999");
+    resultParagraphEl.appendChild(node);
+    output.appendChild(resultParagraphEl);
+    output.classList.remove("hidden");
+  } else if (inputVal.length == 0) {
+    const resultParagraphEl = document.createElement("p");
+    resultParagraphEl.id = "result";
+    const node = document.createTextNode("Please enter a valid number");
+    resultParagraphEl.appendChild(node);
+    output.appendChild(resultParagraphEl);
+    output.classList.remove("hidden");
   } else {
     arabicToRoman(); 
     addToOutput();
@@ -46,10 +66,17 @@ const arabicToRoman = () => {
 
 const addToOutput = () => {
   const resultParagraphEl = document.createElement("p");
+  resultParagraphEl.id = "result";
   const node = document.createTextNode(resultRomanString);
   resultParagraphEl.appendChild(node);
   output.appendChild(resultParagraphEl);
   output.classList.remove("hidden");
+}
+
+const reset = () => {
+  resultRomanString = "";
+  resultArabicNum = 0;
+  output.removeChild(output.lastElementChild);
 }
 
 
