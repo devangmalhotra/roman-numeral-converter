@@ -2,6 +2,7 @@ const inputField = document.getElementById("input");
 const convertButton = document.getElementById("convert-btn");
 let output = document.getElementById("output");
 let resultRomanString = "";
+let resultArabicNum = 0;
 
 const arabicRomanSymbols = [{arabic: 1, roman: "I"}, {arabic: 4, roman: "IV"}, {arabic: 5, roman: "V"}, {arabic: 9, roman: "IX"}, 
 {arabic: 10, roman: "X"}, {arabic: 40, roman: "XL"}, {arabic: 50, roman: "L"}, {arabic: 90, roman: "XC"}, {arabic: 100, roman: "C"}, 
@@ -20,8 +21,20 @@ const isValid = () => {
 
 const arabicToRoman = () => {
   let inputVal = inputField.value;
+  let currIndex = 0;
   //console.log(inputVal);
   
+  // Loop through arabicRomanSymbols arr 
+  // If inputVal > 1000, resultArabicNum += arabicRomanSymbols[-1].arabic, resultRomanString += arabicRomanSymbols[-1].roman, inputVal -= arabicRomanSymbols[-1].arabic
+  // Else, 
+  if (inputVal >= 1000) {
+    resultArabicNum += arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
+    resultRomanString += arabicRomanSymbols[arabicRomanSymbols.length - 1].roman;
+    inputVal -= arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
+    console.log(resultArabicNum);
+    console.log(resultRomanString);
+    console.log(inputVal);
+    }
 }
 
 
