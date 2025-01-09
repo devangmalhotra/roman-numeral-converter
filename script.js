@@ -27,14 +27,23 @@ const arabicToRoman = () => {
   // Loop through arabicRomanSymbols arr 
   // If inputVal > 1000, resultArabicNum += arabicRomanSymbols[-1].arabic, resultRomanString += arabicRomanSymbols[-1].roman, inputVal -= arabicRomanSymbols[-1].arabic
   // Else, 
-  if (inputVal >= 1000) {
-    resultArabicNum += arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
-    resultRomanString += arabicRomanSymbols[arabicRomanSymbols.length - 1].roman;
-    inputVal -= arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
-    console.log(resultArabicNum);
-    console.log(resultRomanString);
-    console.log(inputVal);
+  for (let i = 0; i < 2; i++) { // change to while loop after testing
+    if (inputVal >= 1000) {
+      resultArabicNum += arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
+      resultRomanString += arabicRomanSymbols[arabicRomanSymbols.length - 1].roman;
+      inputVal -= arabicRomanSymbols[arabicRomanSymbols.length - 1].arabic;
+      console.log(resultArabicNum);
+      console.log(resultRomanString);
+      console.log(inputVal);
+    } else {
+      if (arabicRomanSymbols[currIndex + 1].arabic <= inputVal) {
+        currIndex += 1;
+        console.log("test");
+      }
     }
+    //break;
+  }
+  
 }
 
 
