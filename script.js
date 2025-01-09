@@ -16,6 +16,7 @@ const isValid = () => {
     alert("Please enter a number less than or equal to 3999");
   } else {
     arabicToRoman(); 
+    addToOutput();
   }
 }
 
@@ -41,7 +42,14 @@ const arabicToRoman = () => {
       }
     }
   }
-  
+}
+
+const addToOutput = () => {
+  const resultParagraphEl = document.createElement("p");
+  const node = document.createTextNode(resultRomanString);
+  resultParagraphEl.appendChild(node);
+  output.appendChild(resultParagraphEl);
+  output.classList.remove("hidden");
 }
 
 
